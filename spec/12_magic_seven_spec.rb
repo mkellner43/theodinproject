@@ -70,15 +70,41 @@ describe MagicSeven do
   # Write a test for each of the following methods:
 
   describe '#subtract_four' do
+    context 'takes any number and subtracts four from it' do
+      it 'returns 4' do
+        random_number = 8
+        result = game.subtract_four(random_number)
+        expect(result).to eq 4
+      end 
+    end 
   end
 
   describe '#divide_by_two' do
+    context 'takes any number and divides by two' do
+      it 'returns 5' do
+          random_number = 10
+          result = game.divide_by_two(random_number)
+          expect(result).to eq 5
+      end
+    end 
   end
 
   # The following tests will need you to create new instances of MagicSeven with
   # a specific value for the random_number.
-  describe '#subtract_random_number' do
-  end
+  describe MagicSeven do 
+
+    let(:game) { described_class.new(10) }
+
+    describe '#subtract_random_number' do
+      context 'subtracts by a 13' do 
+        it 'returns 3' do 
+          random_number = 13
+          result = game.subtract_random_number(random_number)
+          expect(result).to eq 3
+        end
+      end 
+    end
+  end 
 
   # The #play method will always return seven! Test this game, using any
   # integer as the random_number. Update the context with the number.
