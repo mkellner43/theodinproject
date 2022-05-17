@@ -11,4 +11,12 @@ class FindNumber
     @answer = answer.value
     @guess = guess
   end
+
+  def make_guess
+    ((min + max) / 2).floor 
+  end 
+
+  def game_over?
+    return true if answer == guess
+  end 
 end
