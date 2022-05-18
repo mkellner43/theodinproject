@@ -19,4 +19,10 @@ class FindNumber
   def game_over?
     return true if answer == guess
   end 
+
+  def update_range
+    @answer == @max ? @min == @max : nil
+    @guess < @answer ? @min = @guess + 1 : @min
+    @guess > @answer ? @max = @guess - 1 : @max
+  end 
 end
